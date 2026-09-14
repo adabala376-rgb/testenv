@@ -10,6 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Air Mix Custom Palette */
+  --color-studio-black: #0A0A0A;
+  --color-surface-gray: #181818;
+  --color-laser-red: #E31E24;
+  --color-stark-white: #FFFFFF;
+  --color-silver-gray: #BDBDBD;
 }
 
 @media (prefers-color-scheme: dark) {
