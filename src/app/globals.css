@@ -1,33 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #08080A;
+  --surface-1: #121316;
+  --surface-2: #1D1E24;
+  --accent: #E31E24;
+  --accent-glow: rgba(227, 30, 36, 0.35);
+  --text: #FFFFFF;
+  --text-muted: #9BA1AD;
+  --border-hairline: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-accent: var(--accent);
+  --color-text-main: var(--text);
+  --color-text-muted: var(--text-muted);
 
-  /* Air Mix Custom Palette */
-  --color-studio-black: #0A0A0A;
-  --color-surface-gray: #181818;
-  --color-laser-red: #E31E24;
-  --color-stark-white: #FFFFFF;
-  --color-silver-gray: #BDBDBD;
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100%;
+  letter-spacing: -0.01em;
+}
+
+/* Subtle mixing console / studio acoustic pattern */
+.bg-console-pattern {
+  background-image: 
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
+}
+
+/* Studio red atmospheric glow */
+.studio-glow-red {
+  background: radial-gradient(circle, rgba(227, 30, 36, 0.18) 0%, rgba(227, 30, 36, 0.04) 50%, transparent 75%);
+}
+
+/* Red LED glow for buttons & borders */
+.red-glow-box {
+  box-shadow: 0 0 24px -4px rgba(227, 30, 36, 0.45);
+}
+
+.red-glow-subtle {
+  box-shadow: 0 0 16px -2px rgba(227, 30, 36, 0.25);
+}
+
+/* Custom dark scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #08080A;
+}
+::-webkit-scrollbar-thumb {
+  background: #202228;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E31E24;
+}
+
+/* Focus visible styling */
+:focus-visible {
+  outline: 2px solid #E31E24;
+  outline-offset: 2px;
+}
+
+/* Motion reduction */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

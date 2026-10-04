@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 260" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF383E"/>
+      <stop offset="100%" stop-color="#E31E24"/>
+    </linearGradient>
+    <filter id="wallGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background subtle vignette if rendered standalone -->
+  <rect width="240" height="260" fill="#0B0B0E" rx="12" />
+
+  <!-- Center Emblem (Top) -->
+  <g transform="translate(68, 20) scale(1.85)">
+    <!-- Outer Precision Ring with 4 Sector Cuts -->
+    <path d="M 28 6 A 22 22 0 0 0 7 26" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.95" />
+    <path d="M 7 30 A 22 22 0 0 0 24 49.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.95" />
+    <path d="M 23 52.5 A 25 25 0 0 0 33 52.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.9" />
+    <path d="M 32 49.5 A 22 22 0 0 0 49 30" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.95" />
+    <path d="M 49 26 A 22 22 0 0 0 28 6" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.95" />
+
+    <!-- Red Accents -->
+    <path d="M 12 18 A 22 22 0 0 0 9 24" stroke="#FF2E36" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#wallGlow)" />
+    <path d="M 47 24 A 22 22 0 0 0 44 18" stroke="#FF2E36" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#wallGlow)" />
+    <path d="M 9 32 A 22 22 0 0 0 13 39" stroke="#FF2E36" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#wallGlow)" />
+    <path d="M 43 39 A 22 22 0 0 0 47 32" stroke="#FF2E36" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#wallGlow)" />
+
+    <!-- Audio Waveform -->
+    <g stroke="url(#wallRed)" stroke-width="2" stroke-linecap="round" filter="url(#wallGlow)">
+      <line x1="2" y1="28" x2="2" y2="28" stroke-width="2.2" />
+      <line x1="5" y1="26" x2="5" y2="30" />
+      <line x1="8" y1="23" x2="8" y2="33" />
+      <line x1="11" y1="21" x2="11" y2="35" stroke-width="2.2" />
+      <line x1="14" y1="18" x2="14" y2="38" stroke-width="2.4" />
+      <line x1="17" y1="22" x2="17" y2="34" />
+      <line x1="20" y1="25" x2="20" y2="31" />
+      <line x1="23" y1="26.5" x2="23" y2="29.5" />
+
+      <line x1="33" y1="26.5" x2="33" y2="29.5" />
+      <line x1="36" y1="25" x2="36" y2="31" />
+      <line x1="39" y1="22" x2="39" y2="34" />
+      <line x1="42" y1="18" x2="42" y2="38" stroke-width="2.4" />
+      <line x1="45" y1="21" x2="45" y2="35" stroke-width="2.2" />
+      <line x1="48" y1="23" x2="48" y2="33" />
+      <line x1="51" y1="26" x2="51" y2="30" />
+      <line x1="54" y1="28" x2="54" y2="28" stroke-width="2.2" />
+    </g>
+
+    <!-- Center Mic/Shaft -->
+    <line x1="28" y1="14" x2="28" y2="47" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+    <ellipse cx="28" cy="11.5" rx="5.5" ry="5.5" fill="#FFFFFF" />
+    <circle cx="28" cy="28" r="4.2" fill="#0B0B0E" stroke="#FFFFFF" stroke-width="2.2" />
+    <circle cx="28" cy="28" r="1.5" fill="#FF2E36" filter="url(#wallGlow)" />
+  </g>
+
+  <!-- Typography: AIR MIX (Centered) -->
+  <g transform="translate(120, 192)" text-anchor="middle">
+    <text font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="800" font-size="34" letter-spacing="0.06em">
+      <tspan fill="#FFFFFF">AIR </tspan>
+      <tspan fill="url(#wallRed)" filter="url(#wallGlow)">MIX</tspan>
+    </text>
+  </g>
+
+  <!-- Subtitle: AUDIO ENGINEER (Centered, tracked out) -->
+  <g transform="translate(120, 222)" text-anchor="middle">
+    <text font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="600" font-size="11" letter-spacing="0.32em" fill="#C5C9D3">
+      AUDIO ENGINEER
+    </text>
+  </g>
+</svg>
